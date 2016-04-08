@@ -1,0 +1,11 @@
+{
+  "name": "7zip-bin-osx",
+  "description": "7-Zip OS X binary",
+  "version": "0.0.1",
+  "files": [
+    "7za"
+  ],
+  "os": [
+    "darwin"
+  ]
+}

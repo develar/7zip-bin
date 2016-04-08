@@ -1,0 +1,14 @@
+{
+  "name": "7zip-bin",
+  "description": "7-Zip precompiled binaries",
+  "version": "0.0.1",
+  "files": [
+    "*.js"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "7zip",
+    "7z",
+    "7za"
+  ]
+}
