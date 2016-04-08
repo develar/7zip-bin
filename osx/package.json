@@ -2,8 +2,11 @@
   "name": "7zip-bin-osx",
   "description": "7-Zip OS X binary",
   "version": "0.0.1",
+  "license": "MIT",
+  "repository": "develar/7zip-bin",
   "files": [
-    "7za"
+    "7za",
+    "index.js"
   ],
   "os": [
     "darwin"

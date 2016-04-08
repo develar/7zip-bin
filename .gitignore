@@ -1,3 +1,6 @@
 node_modules/
 .DS_Store
-.idea
+.idea/inspectionProfiles
+.idea/copyright
+.idea/encodings.xml
+.idea/misc.xml

@@ -6,6 +6,10 @@
     "*.js"
   ],
   "license": "MIT",
+  "repository": "develar/7zip-bin",
+  "dependencies": {
+    "7zip-bin-osx": "0.0.1"
+  },
   "keywords": [
     "7zip",
     "7z",

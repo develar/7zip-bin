@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/7za-binaries.iml" filepath="$PROJECT_DIR$/.idea/7za-binaries.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/7zip-bin.iml" filepath="$PROJECT_DIR$/.idea/7zip-bin.iml" />
     </modules>
   </component>
 </project>
