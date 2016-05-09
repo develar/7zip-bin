@@ -1,8 +1,13 @@
 "use strict"
 
-var moduleName = null
-if (process.platform === "darwin") {
-  moduleName = "7zip-bin-osx"
+const nameMap = {
+  "darwin": "osx",
+  "win32": "win",
+  "linux": "linux",
 }
 
-exports.path7za = moduleName == null ? null : require(moduleName).path7za
+const suffix = nameMap[process.platform]
+if (suffix == null) {
+  throw new Error("Unsupported platform " + process.platform)
+}
+exports.path7za = require(`7zip-bin-${suffix}`).path7za
