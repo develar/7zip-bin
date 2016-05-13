@@ -1,7 +1,7 @@
 {
   "name": "7zip-bin-linux",
   "description": "7-Zip Linux binary",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "repository": "develar/7zip-bin",
   "files": [
