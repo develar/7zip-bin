@@ -1,7 +1,7 @@
 {
   "name": "7zip-bin",
   "description": "7-Zip precompiled binaries",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "files": [
     "*.js",
     "index.d.ts"
@@ -9,9 +9,9 @@
   "license": "MIT",
   "repository": "develar/7zip-bin",
   "optionalDependencies": {
-    "7zip-bin-osx": "0.1.0",
-    "7zip-bin-win": "1.0.0",
-    "7zip-bin-linux": "1.0.0"
+    "7zip-bin-osx": "^0.1.0",
+    "7zip-bin-win": "^1.0.0",
+    "7zip-bin-linux": "^1.0.1"
   },
   "keywords": [
     "7zip",
