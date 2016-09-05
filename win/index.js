@@ -1,3 +1,3 @@
 "use strict"
 
-exports.path7za = require("path").join(__dirname, process.arch, "7z.exe")
+exports.path7za = require("path").join(__dirname, process.arch, "7za.exe")
