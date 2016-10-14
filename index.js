@@ -1,7 +1,7 @@
 "use strict"
 
 const nameMap = {
-  "darwin": "osx",
+  "darwin": "mac",
   "win32": "win",
   "linux": "linux",
 }
