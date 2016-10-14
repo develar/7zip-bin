@@ -1,7 +1,7 @@
 {
-  "name": "7zip-bin-osx",
-  "description": "7-Zip OS X binary",
-  "version": "1.0.0",
+  "name": "7zip-bin-mac",
+  "description": "7-Zip macOS binary",
+  "version": "1.0.1",
   "license": "MIT",
   "repository": "develar/7zip-bin",
   "files": [
