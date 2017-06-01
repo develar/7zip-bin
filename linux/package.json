@@ -1,12 +1,11 @@
 {
   "name": "7zip-bin-linux",
   "description": "7-Zip Linux binary",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "license": "MIT",
   "repository": "develar/7zip-bin",
   "files": [
-    "ia32",
-    "x64",
+    "**/7za",
     "index.js"
   ],
   "os": [
