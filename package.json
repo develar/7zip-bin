@@ -1,9 +1,10 @@
 {
   "name": "7zip-bin",
   "description": "7-Zip precompiled binaries",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "files": [
     "*.js",
+    "7x.sh",
     "index.d.ts"
   ],
   "license": "MIT",
