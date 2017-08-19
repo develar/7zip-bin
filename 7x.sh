@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 sz_program=${SZA_PATH:-7za}
 
