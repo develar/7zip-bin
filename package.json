@@ -1,7 +1,7 @@
 {
   "name": "7zip-bin",
   "description": "7-Zip precompiled binaries",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "files": [
     "*.js",
     "7x.sh",
@@ -11,7 +11,7 @@
   "repository": "develar/7zip-bin",
   "optionalDependencies": {
     "7zip-bin-mac": "^1.0.1",
-    "7zip-bin-win": "^2.1.0",
+    "7zip-bin-win": "^2.1.1",
     "7zip-bin-linux": "^1.1.0"
   },
   "keywords": [
