@@ -14,4 +14,3 @@ if (suffix == null) {
 }
 exports.path7za = process.env.USE_SYSTEM_7ZA === "true" ? "7za" : require(`7zip-bin-${suffix}`).path7za
 exports.path7x = path.join(__dirname, "7x.sh")
-exports.pathCompressStdIn = path.join(__dirname, "compress.sh")
