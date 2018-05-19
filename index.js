@@ -1,11 +1,12 @@
 "use strict"
 
+const path = require("path")
+
 function getPath() {
   if (process.env.USE_SYSTEM_7ZA === "true") {
     return "7za"
   }
 
-  const path = require("path")
   if (process.platform === "darwin") {
     return path.join(__dirname, "mac", "7za")
   }
