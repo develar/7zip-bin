@@ -8,7 +8,7 @@ function getPath() {
   }
 
   if (process.platform === "darwin") {
-    return path.join(__dirname, "mac", "7za")
+    return path.join(__dirname, "mac", process.arch, "7za")
   }
   else if (process.platform === "win32") {
     return path.join(__dirname, "win", process.arch, "7za.exe")
