@@ -2,19 +2,27 @@
   "name": "7zip-bin",
   "description": "7-Zip precompiled binaries",
   "version": "5.2.0",
+  "scripts": {
+    "update-binaries": "node update-binaries.js"
+  },
   "files": [
     "*.js",
     "7x.sh",
     "index.d.ts",
     "linux",
-    "mac",
-    "win"
+    "win",
+    "mac"
   ],
   "license": "MIT",
   "repository": "develar/7zip-bin",
   "keywords": [
     "7zip",
     "7z",
+    "7zz",
+    "7zzs",
     "7za"
-  ]
+  ],
+  "devDependencies": {
+    "node-7z": "^3.0.0"
+  }
 }

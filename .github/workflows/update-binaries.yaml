@@ -1,0 +1,75 @@
+name: Update 7zip binaries
+
+on:
+  workflow_dispatch:  # Allows you to run this workflow manually from the Actions tab
+  schedule:
+    - cron: '0 6 * * *' # Daily
+
+permissions:
+  contents: write # to create release (changesets/action)
+  pull-requests: write # to create pull request (changesets/action)
+
+jobs:
+  update-binaries:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.4.0
+
+      - name: Install dependencies
+        run: |
+          pnpm install
+
+      - name: Run update binaries script
+        id: update
+        run: node update-binaries.js --publish
+
+      - name: Get update abort
+        id: abort
+        run: |
+          echo "abort=$(cat abort.txt)" >> $GITHUB_OUTPUT
+          rm abort.txt
+
+      - name: Get 7zip version
+        if: steps.abort.outputs.abort != '1'
+        id: version
+        run: |
+          echo "version=$(cat 7z-version.txt)" >> $GITHUB_OUTPUT
+          rm 7z-version.txt
+
+      - name: Get package version
+        if: steps.abort.outputs.abort != '1'
+        id: packageVersion
+        run: |
+          echo "version=$(cat package-version.txt)" >> $GITHUB_OUTPUT
+          rm package-version.txt
+
+      - name: Bump version with pnpm
+        if: steps.abort.outputs.abort != '1'
+        run: pnpm version ${{ steps.packageVersion.outputs.version }} --no-git-tag-version
+
+      - name: Create Pull Request
+        if: steps.abort.outputs.abort != '1'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: upgrade 7zip binaries to v${{ steps.version.outputs.version }}"
+          title: "chore: upgrade 7zip binaries to v${{ steps.version.outputs.version }}"
+          body: |
+            This pull request was automatically created by a GitHub Action.
+          branch: update-branch
+          base: master
