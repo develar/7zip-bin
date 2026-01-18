@@ -1,0 +1,24 @@
+#!/bin/sh
+export LANG=en
+
+FLAG_BYTE=$(hexdump -s 48 -n 1 -C /usr/bin/sh 2>/dev/null | awk '{print $2}')
+
+SCRIPT_FILE="$0"
+SCRIPT_PATH=$(dirname "$0")
+SCRIPT_NAME=$(basename "$0")
+
+SCRIPT_FILE_1="${SCRIPT_FILE}-abi1.0"
+SCRIPT_FILE_2="${SCRIPT_FILE}-abi2.0"
+
+chmod +x "${SCRIPT_FILE_1}" "${SCRIPT_FILE_2}"
+
+if [ "$FLAG_BYTE" = "43" ]; then
+    echo "New World detected (ABI2.0)"
+    exec "${SCRIPT_FILE_2}" "$@"
+elif [ "$FLAG_BYTE" = "03" ]; then
+    echo "Old World detected (ABI1.0)"
+    exec "${SCRIPT_FILE_1}" "$@"
+else
+    echo "Unknown LoongArch ABI: $FLAG_BYTE"
+    exit 1
+fi
